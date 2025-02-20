@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>League Maker</h1>
+        
+        <!-- Team Entry -->
+        <div class="form-group">
+            <label for="teams">Enter Team Names (comma separated):</label>
+            <input type="text" id="teams" placeholder="Team 1, Team 2, Team 3, ...">
+        </div>
+        
+        <!-- Match Time Entry -->
+        <div class="form-group">
+            <label for="match-times">Enter Match Times (comma separated):</label>
+            <input type="text" id="match-times" placeholder="10:00 AM, 12:00 PM, 2:00 PM, ...">
+        </div>
+
+        <!-- Location Entry -->
+        <div class="form-group">
+            <label for="locations">Enter Field Locations (comma separated):</label>
+            <input type="text" id="locations" placeholder="Field 1, Field 2, Field 3, ...">
+        </div>
+
+        <!-- Number of Matches -->
+        <div class="form-group">
+            <label for="num-matches">Number of Matches:</label>
+            <input type="number" id="num-matches" min="20" max="30" required>
+        </div>
+
+        <button onclick="generateFixtures()">Generate Fixtures</button>
+
+        <table class="fixture-table" id="fixtures-table" style="display:none;">
+            <thead>
+                <tr>
+                    <th>Match</th>
+                    <th>Team 1</th>
+                    <th>Team 2</th>
+                    <th>Field</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody id="fixtures-body">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
